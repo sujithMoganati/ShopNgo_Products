@@ -29,6 +29,23 @@ async function loadCategories() {
   }
 }
 
+// Show colorful popup message
+function showSuccessPopup(message) {
+  const popup = document.createElement("div");
+  popup.className = "success-popup";
+  popup.textContent = message;
+
+  document.body.appendChild(popup);
+  setTimeout(() => {
+    popup.classList.add("show");
+  }, 100);
+
+  setTimeout(() => {
+    popup.classList.remove("show");
+    setTimeout(() => popup.remove(), 500);
+  }, 2500);
+}
+
 // Submit product form
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -61,9 +78,9 @@ form.addEventListener("submit", async (e) => {
       throw new Error(data.message || "Something went wrong");
     }
 
-    msg.style.color = "green";
-    msg.textContent = "✅ Product created successfully!";
+    msg.textContent = "";
     form.reset();
+    showSuccessPopup("🎉 Product submitted successfully!");
   } catch (err) {
     msg.style.color = "red";
     msg.textContent = `❌ ${err.message}`;
