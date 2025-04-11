@@ -1,9 +1,19 @@
 body {
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #f3fef3;
   color: #2d572c;
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  font-family: "Audiowide", sans-serif;
+}
+
+#logo {
+  height: 100px;
+  vertical-align: middle;
+  margin-bottom: 24px;
 }
 
 .header {
@@ -17,7 +27,7 @@ body {
 }
 
 .cart {
-  font-size: 4rem;
+  font-size: 3.9rem;
 }
 
 .form-container {
@@ -121,4 +131,24 @@ button:hover {
   text-align: center;
   font-weight: bold;
   color: #444;
+}
+
+.success-popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #38ef7d, #11998e); /* Green gradient */
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 100, 0, 0.2);
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.success-popup.show {
+  opacity: 1;
 }
